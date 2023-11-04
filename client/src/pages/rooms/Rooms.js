@@ -7,7 +7,8 @@ import room1 from "../../assets/rooms/room1.png";
 import room2 from "../../assets/rooms/room2.png";
 import room3 from "../../assets/rooms/rom3.png";
 import RoomCard from "../../components/roomCard/RoomCard.js";
-import Footer from "../../layouts/footer/Footer.js";
+import Footer from "../../layout/footer/Footer.js";
+import Navbar from "../../layout/navbar/NavBar.js";
 function Rooms() {
   //////////////////////
   let roomsArr = [
@@ -64,7 +65,6 @@ function Rooms() {
   }
   return (
     <>
-      {/* <Navbar / > */}
       <div className={roomsModule.wrapper}>
         <div className={roomsModule.filter} onClick={clickHandler}>
           <div className={roomsModule.upper}>

@@ -2,6 +2,7 @@ import React from "react";
 import googleG from "../../assets/G.png";
 import hidden from "../../assets/hidden.png";
 import signupModule from "./signup.module.css";
+import { Link } from "react-router-dom";
 function SignUp() {
   return (
     <div className={signupModule.wrapper}>
@@ -40,9 +41,9 @@ function SignUp() {
         </label>
         <button className={signupModule.signupBtn}>Sign Up</button>
         <p className={signupModule.query}>Already have an account?</p>
-        <a href="#" className={signupModule.login}>
+        <Link to="/logIn" className={signupModule.login}>
           Log in
-        </a>
+        </Link>
         <p className={signupModule.or}>Or</p>
         <button className={signupModule.gSign}>
           <span className={signupModule.glogo}>

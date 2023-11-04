@@ -75,7 +75,7 @@ letter-spacing: 0.688px;
     column-gap: 4rem;
     row-gap: 4rem;
     width: 70vw;
-    margin: auto  ;
+    margin: 7rem auto  ;
 }
 @media (max-width:800px){
     .gridView{
