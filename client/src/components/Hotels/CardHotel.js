@@ -1,5 +1,5 @@
 import React from "react";
-import cardHotelStyle from "./CardHotel.module.css";
+import cardHotelStyle from "../../components/Hotels/CardHotel.module.css";
 
 const CardHotel = ({ data: { Name, Address, imageSrc, rate } }) => {
   const rating = (rate) => {

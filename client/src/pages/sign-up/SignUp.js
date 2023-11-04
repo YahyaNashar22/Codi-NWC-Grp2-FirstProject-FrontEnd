@@ -1,6 +1,6 @@
 import React from "react";
-import googleG from "../../assets/G.png";
-import hidden from "../../assets/hidden.png";
+import googleG from "../../assets/images/G.png";
+import hidden from "../../assets/images/hidden.png";
 import signupModule from "./signup.module.css";
 import { Link } from "react-router-dom";
 function SignUp() {

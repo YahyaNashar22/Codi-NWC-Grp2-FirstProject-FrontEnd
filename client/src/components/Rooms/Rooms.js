@@ -1,14 +1,12 @@
 import React from "react";
 import roomsModule from "./rooms.module.css";
-import down from "../../assets/down.png";
-import up from "../../assets/up.png";
+import down from "../../assets/images/down.png";
+import up from "../../assets/images/up.png";
 import { useState } from "react";
-import room1 from "../../assets/rooms/room1.png";
-import room2 from "../../assets/rooms/room2.png";
-import room3 from "../../assets/rooms/rom3.png";
-import RoomCard from "../../components/roomCard/RoomCard.js";
-import Footer from "../../layout/footer/Footer.js";
-import Navbar from "../../layout/navbar/NavBar.js";
+import room1 from "../../assets/images/rooms/room1.png";
+import room2 from "../../assets/images/rooms/room2.png";
+import room3 from "../../assets/images/rooms/rom3.png";
+import RoomCard from "../roomCard/RoomCard.js";
 function Rooms() {
   //////////////////////
   let roomsArr = [
@@ -102,7 +100,6 @@ function Rooms() {
           })}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

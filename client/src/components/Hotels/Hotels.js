@@ -1,6 +1,6 @@
 import React from "react";
-import CardHotel from "./CardHotel.js";
-import hotel1 from "../../assets/hotel2.png";
+import CardHotel from "./CardHotel";
+import hotel1 from "../../assets/images/hotel2.png";
 import hotelsStyle from "./Hotels.module.css";
 const Hotels = () => {
   const hotelData = {
