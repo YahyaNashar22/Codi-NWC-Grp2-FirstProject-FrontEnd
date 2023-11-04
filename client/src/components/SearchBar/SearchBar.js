@@ -93,12 +93,10 @@ function SearchBar() {
         )}
       </section>
 
-      <button className={`${SearchBarStyle.section}`}>
+      <Link  to="room" className={`${SearchBarStyle.section}`}>
         <img src={search} className={SearchBarStyle.icon} alt="search" />
-        <Link to="room" className={SearchBarStyle.text}>
           Search
-        </Link>
-      </button>
+      </Link>
     </section>
   );
 }

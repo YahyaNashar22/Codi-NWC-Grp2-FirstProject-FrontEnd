@@ -1,7 +1,6 @@
 import React from "react";
 import Hotels from "../../components/Hotels/Hotels.js";
-import NavBar from "../../layouts/NavBar/NavBar";
-import Footer from "../../layouts/footer/Footer";
+import Footer from "../../layout/footer/Footer";
 
 const hotels = () => {
   return (

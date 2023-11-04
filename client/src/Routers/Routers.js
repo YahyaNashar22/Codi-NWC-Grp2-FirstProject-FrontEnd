@@ -7,7 +7,7 @@ import RoomsPage from "../pages/roomss/RoomsPage";
 import Info from "../pages/Info/Info";
 import Login from "../pages/log-in/Login.js";
 import SignUp from "../pages/sign-up/SignUp.js";
-import Navbar from "../layouts/NavBar/NavBar.js";
+import Navbar from "../layout/navbar/NavBar";
 const AppRouter = () => {
   return (
     <BrowserRouter>

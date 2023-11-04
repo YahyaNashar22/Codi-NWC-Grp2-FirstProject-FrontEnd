@@ -27,6 +27,7 @@
     border-right: 1px solid rgb(218, 216, 216);
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 
@@ -61,14 +62,11 @@
     align-items: center;
     margin-right: 0;
     color: white;
-
-}
-
-.section:last-child >a{
-    color: white;
     text-decoration: none;
     font-size: 18px;
+
 }
+
 
 .section:nth-child(4) {
     border: none;
@@ -80,11 +78,13 @@
     border: none;
     background-color: transparent;
     font-size: 18px;
+    cursor: pointer;
 
 }
 
 
 .calendar {
+    cursor: pointer;
     border: none;
 }
 

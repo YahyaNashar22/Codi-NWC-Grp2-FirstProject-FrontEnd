@@ -3,7 +3,7 @@ import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import Service from "../../components/Services/Service";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import HeroSection from "../../components/HeroSection/HeroSection";
-import Footer from "../../layouts/footer/Footer";
+import Footer from "../../layout/footer/Footer";
 function Home() {
   return (
     <>

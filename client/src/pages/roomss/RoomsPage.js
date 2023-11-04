@@ -1,7 +1,6 @@
 import React from "react";
 import Rooms from "../../components/Rooms/Rooms";
-import Footer from "../../layouts/footer/Footer";
-import NavBar from "../../layouts/NavBar/NavBar";
+import Footer from "../../layout/footer/Footer";
 const RoomsPage = () => {
   return (
     <>

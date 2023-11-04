@@ -1,7 +1,7 @@
 import Styles from "./NavBar.module.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const [collapesed, setCollapsed] = useState(false);
@@ -33,7 +33,7 @@ const Navbar = () => {
           href="/"
           aria-label="Go to homepage"
         >
-          <img src={logo} width={200} height={60} alt="Codi Chronicles Logo" />
+          <img src={logo} width={200} height={60} alt="HotelXpress" />
         </a>
         <ul className={Styles.linksWrapper}>
           <li>
