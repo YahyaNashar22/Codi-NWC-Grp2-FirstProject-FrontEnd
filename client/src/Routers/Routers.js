@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../components/HeroSection/HeroSection";
 import Hotels from "../components/Hotels/Hotels";
 import Booking from "../components/Booking/BookingDetails";
-import Rooms from "../pages/rooms/Rooms.js";
+import Rooms from "../pages/rooms/RoomsPage.js";
 import Login from "../pages/log-in/Login.js";
 import SignUp from "../pages/sign-up/SignUp.js";
 import Contact from "../pages/contact/Contact.js";

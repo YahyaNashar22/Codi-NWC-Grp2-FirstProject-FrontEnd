@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../../layouts/NavBar/NavBar";
+import NavBar from "../../layout/navbar/NavBar.js";
 import HotelXpress from "../../assets/images/Home.jpg";
 import style from "../../components/HeroSection/HeroSection.module.css";
 import SearchBar from "../SearchBar/SearchBar";

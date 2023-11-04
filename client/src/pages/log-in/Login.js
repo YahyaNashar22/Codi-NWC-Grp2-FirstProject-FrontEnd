@@ -1,7 +1,7 @@
 import React from "react";
 import loginModule from "./login.module.css";
-import hidden from "../../assets/hidden.png";
-import googleG from "../../assets/G.png";
+import hidden from "../../assets/images/hidden.png";
+import googleG from "../../assets/images/G.png";
 import { Link } from "react-router-dom";
 function Login() {
   return (
