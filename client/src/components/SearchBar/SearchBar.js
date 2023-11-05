@@ -11,8 +11,8 @@ import SelectPerson from "../Guests/SelectPerson";
 
 function SearchBar() {
   const [isClicked, setIsClicked] = useState(false);
-  const [guestsParent, setGuestsParent] = useState(0);
-  const [roomsParent, setRoomsParent] = useState(0);
+  const [guestsParent, setGuestsParent] = useState(1);
+  const [roomsParent, setRoomsParent] = useState(1);
   const [isDoneParent, setIsDoneParent] = useState(false);
 
   const selectPeople = () => {
