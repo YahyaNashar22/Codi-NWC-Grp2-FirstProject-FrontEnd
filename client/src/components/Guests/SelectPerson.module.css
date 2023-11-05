@@ -31,6 +31,7 @@
     font-weight: 800;
     position: relative;
     right: 0;
+    cursor: pointer;
 }
 
 @media only Screen and (width<700px) {
