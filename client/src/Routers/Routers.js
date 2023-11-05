@@ -8,6 +8,7 @@ import Info from "../pages/Info/Info";
 import Login from "../pages/log-in/Login.js";
 import SignUp from "../pages/sign-up/SignUp.js";
 import Navbar from "../layout/navbar/NavBar";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -19,7 +20,8 @@ const AppRouter = () => {
         <Route path="/booking" element={<Booking />}></Route>
         <Route path="/signUp" element={<SignUp />}></Route>
         <Route path="/logIn" element={<Login />}></Route>
-        <Route path="info" element={<Info />}></Route>
+        <Route path="/info" element={<Info />}></Route>
+        <Route path='/*' element={<PageNotFound/>}></Route>
       </Routes>
     </BrowserRouter>
   );

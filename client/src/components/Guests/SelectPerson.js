@@ -1,48 +1,65 @@
 import React, { useState } from "react";
-import SelectPersonStyle from "./SelectPerson.module.css";
+import style from "./SelectPerson.module.css";
 
-function SelectPerson({ counterParent, setCounterParent, setIsDoneParent }) {
-  const [counter, setCounter] = useState(0);
-  const [isDone, setIsDone] = useState(false);
-  // const [counterParent, setCounterParent] = useState(0);
-  // const [isDoneParent, setISDoneParent] = useState(false)
 
-  const Increase = () => {
-    setCounter((prev) => prev + 1);
-  };
+function SelectPerson({ setGuestsParent,setRoomsParent, setIsDoneParent,setIsCliked }) {
+  // const [isDone, setIsDone] = useState(false);
+  const [guests, setGuests] = useState(1);
+  const [rooms, setRooms] = useState(1);
 
-  const Decrease = () => {
-    setCounter((prev) => prev - 1);
-  };
+
 
   const sendDataToParent = () => {
-    setCounterParent(counter);
-    setIsDone((prev) => !prev);
-    setIsDoneParent(isDone);
+    setGuestsParent(guests);
+    setRoomsParent(rooms);
+    setIsDoneParent(isDoneParent=>!isDoneParent);
+    setIsCliked(isClicked=>!isClicked)
   };
 
   return (
-    <div className={SelectPersonStyle.card}>
-      <h3>Room</h3>
-      <div className={SelectPersonStyle.selection}>
-        <p>guests</p>
-        <div className={SelectPersonStyle.container}>
-          <div className={SelectPersonStyle.counterButton} onClick={Decrease}>
-            -
-          </div>
-          <p className={SelectPersonStyle.counterValue}>{counter}</p>
-          <div className={SelectPersonStyle.counterButton} onClick={Increase}>
-            +
-          </div>
-        </div>
-      </div>
+    < section className={style.card}>
+      <h3>Select</h3>
+      <Select label='Guests' selected={guests} setSelected={setGuests}/>
+      <Select label='Rooms'  selected={rooms}  setSelected={setRooms}/>
       <button
-        className={SelectPersonStyle.DoneButton}
+        className={style.DoneButton}
         onClick={sendDataToParent}
       >
         Done
       </button>
-    </div>
+
+    </section>
+  );
+}
+
+
+
+const Select = (props) => {
+
+  const Increase = () => {
+    props.setSelected(prev => prev + 1);
+  };
+
+  const Decrease = () => {
+    props.setSelected(prev => {
+      if (prev > 1) return prev - 1;
+      else return prev
+    });
+  };
+
+  return (
+    <section className={style.selection}>
+      <p>{props.label}</p>
+      <div className={style.container}>
+        <div className={`${(props.selected >1) ? style.counterButton : style.blur}`} onClick={Decrease}>
+          -
+        </div>
+        <p className={style.counterValue}>{props.selected}</p>
+        <div className={style.counterButton} onClick={Increase}>
+          +
+        </div>
+      </div>
+    </section>
   );
 }
 

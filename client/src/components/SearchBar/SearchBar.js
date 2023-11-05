@@ -11,12 +11,13 @@ import SelectPerson from "../Guests/SelectPerson";
 
 function SearchBar() {
   const [isClicked, setIsClicked] = useState(false);
-  const [counterParent, setCounterParent] = useState(0);
-  const [isDoneParent, setISDoneParent] = useState(false);
+  const [guestsParent, setGuestsParent] = useState(0);
+  const [roomsParent, setRoomsParent] = useState(0);
+  const [isDoneParent, setIsDoneParent] = useState(false);
 
   const selectPeople = () => {
     setIsClicked(!isClicked);
-    setISDoneParent(true);
+    setIsDoneParent(true);
   };
 
   let date1 = useRef(null);
@@ -79,23 +80,24 @@ function SearchBar() {
           onClick={selectPeople}
         />
         <p className={SearchBarStyle.text}>Rooms for</p>
-        <p className={SearchBarStyle.Description} onClick={selectPeople}>
-          1 room, {counterParent}guests{" "}
-        </p>
+        <span className={SearchBarStyle.Description} onClick={selectPeople}>
+          {roomsParent} room, {guestsParent}guests{" "}
+        </span>
         {isClicked && isDoneParent ? (
           <SelectPerson
-            counterValue={counterParent}
-            setCounterParent={setCounterParent}
-            setIsDoneParent={setISDoneParent}
+            setGuestsParent={setGuestsParent}
+            setRoomsParent={setRoomsParent}
+            setIsDoneParent={setIsDoneParent}
+            setIsCliked={setIsClicked}
           />
         ) : (
           ""
         )}
       </section>
 
-      <Link  to="room" className={`${SearchBarStyle.section}`}>
+      <Link to="/room" className={`${SearchBarStyle.section}`}>
         <img src={search} className={SearchBarStyle.icon} alt="search" />
-          Search
+        Search
       </Link>
     </section>
   );
