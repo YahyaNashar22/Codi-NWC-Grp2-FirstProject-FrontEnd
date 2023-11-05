@@ -81,7 +81,7 @@ function SearchBar() {
         />
         <p className={SearchBarStyle.text}>Rooms for</p>
         <span className={SearchBarStyle.Description} onClick={selectPeople}>
-          {roomsParent} room, {guestsParent}guests{" "}
+          {roomsParent} room, {guestsParent}guest{" "}
         </span>
         {isClicked && isDoneParent ? (
           <SelectPerson
@@ -89,6 +89,8 @@ function SearchBar() {
             setRoomsParent={setRoomsParent}
             setIsDoneParent={setIsDoneParent}
             setIsCliked={setIsClicked}
+            roomsParent={roomsParent}
+            guestsParent={guestsParent}
           />
         ) : (
           ""
