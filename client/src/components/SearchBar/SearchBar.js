@@ -95,7 +95,7 @@ function SearchBar() {
         ) : (
           ""
         )}
-      </section>
+      </section >
 
       <Link to="/room" className={`${SearchBarStyle.section}`}>
         <img src={search} className={SearchBarStyle.icon} alt="search" />

@@ -5,7 +5,8 @@
     top: 0;
     z-index: 5;
     width: 100%;
-
+    margin: 0;
+    font-family: Open Sans;
 }
 
 .navBar {
@@ -17,15 +18,17 @@
     align-items: center;
     overflow: hidden;
 }
-.right{
+
+.right {
     display: flex;
     list-style: none;
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
     width: 20vw;
-    
+
 }
+
 .logoContainer {
     transition: 0.3s opacity ease-in-out;
 
@@ -68,7 +71,7 @@
 
 .logSignButton {
     width: 90px;
-    padding:10px;
+    padding: 10px;
     font-size: 18px;
     background-color: var(--main-blue);
     border-radius: 23px;
@@ -160,7 +163,8 @@
         width: 100%;
     }
 
-    .linksWrapper, .right {
+    .linksWrapper,
+    .right {
         display: none;
     }
 

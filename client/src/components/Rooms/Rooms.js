@@ -60,7 +60,7 @@ function Rooms({ idHotel }) {
     else if (reference.current.textContent === "Price")
       setData(data.sort((a, b) => a.price - b.price));
     else if (reference.current.textContent === "Rate")
-      setData(data.sort((a, b) => a.rate - b.rate));
+      setData(data.sort((a, b) => a.Hote.rate - b.Hotel.rate));
   };
   return (
     <>
@@ -118,7 +118,7 @@ function Rooms({ idHotel }) {
                   address={room.address}
                   hotel={room.hotel}
                   price={room.price}
-                  stars={room.stars}
+                  stars={room.Hotel.rate}
                   key={index}
                 />
               );
