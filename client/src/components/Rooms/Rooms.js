@@ -6,25 +6,48 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import RoomCard from "../roomCard/RoomCard.js";
 
-function Rooms({ idHotel }) {
+function Rooms({ idHotel, formData }) {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState(null);
   const [DefaultData, setDefaultData] = useState(false);
+  // console.log(formData);
 
+
+
+  const testing = (room) => {
+    if (room.isBooked === true && room.Hotel.city === formData.position && room.maxpeople === formData.guests) {
+      return true
+    }
+    else return false
+  }
+
+
+
+
+  //fetching Data 
   useEffect(() => {
     async function fetchData() {
+
       try {
         setIsLoading(true);
         if (!idHotel) {
-          console.log(idHotel);
           const response = await axios.get("http://localhost:8000/room");
           setData(response.data.dataRooms);
-        } else {
+          if (formData) {
+            //testing function that map over data to check if there are rooms accrding to the searchForm data
+            let rooms = rooms.filter(testing);
+            setData(rooms);
+          }
+
+
+        }
+        else {
           const response = await axios.get(
             `http://localhost:8000/room/byHotel/${idHotel}`
           );
           setData(response.data.data.rooms);
         }
+
       } catch (error) {
         console.error(error);
       } finally {
@@ -32,12 +55,15 @@ function Rooms({ idHotel }) {
       }
     }
     fetchData();
-  }, [idHotel, DefaultData]);
+  }, [idHotel, DefaultData, formData]);
+
+
 
   const [active, setActive] = useState(false);
   const clickHandler = () => {
     setActive(!active);
   };
+
 
   let ink = roomsModule.open;
   let arr = down;
@@ -49,6 +75,8 @@ function Rooms({ idHotel }) {
     arr = down;
   }
 
+
+
   //creating sorting ref
   const defaultSorting = useRef();
   const priceSorting = useRef();
@@ -57,11 +85,15 @@ function Rooms({ idHotel }) {
   const sorting = (reference) => {
     if (reference.current.textContent === "Default")
       setDefaultData(!DefaultData);
+
     else if (reference.current.textContent === "Price")
       setData(data.sort((a, b) => a.price - b.price));
+
     else if (reference.current.textContent === "Rate")
-      setData(data.sort((a, b) => a.Hote.rate - b.Hotel.rate));
+      setData(data.sort((a, b) => b.Hotel.rate - a.Hotel.rate));
   };
+
+
   return (
     <>
       <div className={roomsModule.wrapper}>
@@ -124,8 +156,8 @@ function Rooms({ idHotel }) {
               );
             })
           ) : (
-            <span className={roomsModule.loading}>loading....</span>
-          )}
+            <span className={roomsModule.loading}>loading....</span>)
+          }
         </div>
       </div>
     </>
