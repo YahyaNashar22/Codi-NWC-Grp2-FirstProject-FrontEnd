@@ -145,12 +145,12 @@ function SearchBar() {
           ""
         )}
       </fieldset >
-      <div onClick={() => searchRooms(formSearching)} className={SearchBarStyle.section}>
+      <section onClick={() => searchRooms(formSearching)} className={SearchBarStyle.section}>
         <Link to="/room" >
           <img src={search} className={SearchBarStyle.icon} alt="search" />
           Search
         </Link>
-      </div>
+      </section>
     </section>
   );
 }

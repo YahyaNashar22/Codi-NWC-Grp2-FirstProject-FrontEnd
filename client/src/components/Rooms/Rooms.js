@@ -15,12 +15,17 @@ function Rooms({ idHotel, formData }) {
 
 
   const testing = (room) => {
-    if (room.isBooked === true && room.Hotel.city === formData.position && room.maxpeople === formData.guests) {
+    if (room.isBooked === false && room.Hotel.city === formData.position && room.maxpeople === formData.guests) {
+      console.log("I AM IN")
       return true
     }
-    else return false
-  }
+    else {
+      console.log("I AM OUT")
 
+      return false
+    }
+  }
+  console.log(formData);
 
 
 
@@ -32,11 +37,14 @@ function Rooms({ idHotel, formData }) {
         setIsLoading(true);
         if (!idHotel) {
           const response = await axios.get("http://localhost:8000/room");
-          setData(response.data.dataRooms);
-          if (formData) {
+          let rooms = response.data.dataRooms
+          console.log("fetched rooms", rooms)
+          setData(rooms);
+          if (formData && formData.position !== '' && formData !== null) {
             //testing function that map over data to check if there are rooms accrding to the searchForm data
-            let rooms = rooms.filter(testing);
-            setData(rooms);
+            console.log("conditions", formData)
+            console.log("filtered rooms", rooms)
+            setData((prev) => prev.filter(testing));
           }
 
 
