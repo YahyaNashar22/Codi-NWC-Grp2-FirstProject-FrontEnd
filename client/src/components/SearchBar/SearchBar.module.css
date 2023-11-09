@@ -57,11 +57,13 @@
     justify-content: center;
     align-items: center;
     margin-right: 0;
-    color: white;
-    text-decoration: none;
+  
 
 }
-
+.section:last-child>a{
+    color: white;
+    text-decoration: none;
+}
 
 .section:nth-child(4) {
     border: none;

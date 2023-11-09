@@ -145,8 +145,8 @@ function SearchBar() {
           ""
         )}
       </fieldset >
-      <div onClick={() => searchRooms(formSearching)}>
-        <Link to="/room" className={`${SearchBarStyle.section}`} >
+      <div onClick={() => searchRooms(formSearching)} className={SearchBarStyle.section}>
+        <Link to="/room" >
           <img src={search} className={SearchBarStyle.icon} alt="search" />
           Search
         </Link>
