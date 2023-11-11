@@ -1,19 +1,18 @@
 .container {
     font-size: 20px;
     position: absolute;
-    top: 50%;
-    left: 17%;
-    width: 70%;
-    height: 100px;
+    top: 55%;
+    left: 10%;
+    width: 80%;
+    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 80px;
     box-shadow: 0px 10px 10px 0 rgba(65, 65, 72, 0.9);
     z-index: 2;
 }
-
 
 .section {
     border: none;
@@ -49,21 +48,26 @@
 
 
 .section:last-child {
+    font-size: 20px;
     background-color: var(--main-blue);
     height: 100%;
     border: none;
-    border-radius: 50px;
+    border-radius: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 0;
-  
 
 }
-.section:last-child>a{
+
+.section:last-child>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-decoration: none;
 }
+
 .section:nth-child(4) {
     border: none;
 }
@@ -84,7 +88,7 @@
     cursor: pointer;
     border: none;
     overflow: none;
-    width:7rem;
+    width: 7rem;
 
 }
 
@@ -163,8 +167,9 @@
 
 
 }
-@media(max-width:400px){
-    .calendar{
+
+@media(max-width:400px) {
+    .calendar {
         scale: 0.9;
     }
 }
