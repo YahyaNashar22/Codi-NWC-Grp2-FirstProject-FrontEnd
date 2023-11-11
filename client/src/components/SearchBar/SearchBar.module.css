@@ -74,6 +74,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    overflow: none;
 
 
 }
@@ -82,6 +83,8 @@
 .calendar {
     cursor: pointer;
     border: none;
+    overflow: none;
+    width:7rem;
 
 }
 
@@ -159,4 +162,9 @@
     }
 
 
+}
+@media(max-width:400px){
+    .calendar{
+        scale: 0.9;
+    }
 }

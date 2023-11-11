@@ -5,6 +5,7 @@ import up from "../../assets/images/up.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import RoomCard from "../roomCard/RoomCard.js";
+import loading from "../../assets/images/tt.gif";
 
 function Rooms({ idHotel, formData }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -98,7 +99,7 @@ function Rooms({ idHotel, formData }) {
       setData(data.sort((a, b) => a.price - b.price));
 
     else if (reference.current.textContent === "Rate")
-      setData(data.sort((a, b) => b.Hotel.rate - a.Hotel.rate));
+      setData(data.sort((a, b) => a.Hotel.rate - b.Hotel.rate));
   };
 
 
@@ -149,6 +150,7 @@ function Rooms({ idHotel, formData }) {
             </ul>
           </div>
         </div>
+
         <div className={roomsModule.gridView}>
           {!isLoading && data ? (
             data.map((room, index) => {
@@ -164,8 +166,19 @@ function Rooms({ idHotel, formData }) {
               );
             })
           ) : (
-            <span className={roomsModule.loading}>loading....</span>)
-          }
+            <span className={roomsModule.loading}>
+            <img
+              src={loading}
+              style={{
+                width: "100%",
+                height: "100%",
+                marginLeft: "20rem",
+              }}
+              alt="loading"
+            />
+          </span>
+        )}
+          
         </div>
       </div>
     </>

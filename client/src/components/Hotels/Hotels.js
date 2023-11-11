@@ -3,6 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import CardHotel from "./CardHotel";
 import axios from "axios";
 import hotelsStyle from "./Hotels.module.css";
+import loading from "../../assets/images/tt.gif";
+
 const Hotels = () => {
   const [hotelData, setHotelData] = useState(null);
   const [isLoading, setIsloading] = useState(false);
@@ -12,7 +14,9 @@ const Hotels = () => {
     async function fetchData() {
       try {
         setIsloading(true);
-        const response = await axios.get("http://localhost:8000/hotel");
+        const response = await axios.get(
+          "https://codi-nwc-grp2-firstproject-backend.onrender.com/hotel"
+        );
         if (response) {
           setHotelData(response.data.data);
           // setIsloading(false)
@@ -39,7 +43,17 @@ const Hotels = () => {
             return <CardHotel data={hotel} key={index} />;
           })
         ) : (
-          <span className={hotelsStyle.loading}>loading....</span>
+          <span className={hotelsStyle.loading}>
+            <img
+              src={loading}
+              style={{
+                width: "60%",
+                height: "60%",
+                scale: "1",
+              }}
+              alt="loading"
+            />
+          </span>
         )}
       </div>
     </div>
